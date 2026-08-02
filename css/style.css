@@ -1,0 +1,457 @@
+/* =========================================================================
+   RECANTO DOS SONHOS — FOLHA DE ESTILOS
+   Tema: jardim elegante — fundo escuro, verde de destaque, dourado/creme.
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --verde-900: #0e1f16;
+  --verde-800: #14281c;
+  --verde-700: #1c3a26;
+  --verde-600: #2f5233;
+  --verde-500: #4a7856;
+  --verde-400: #6fa37f;
+
+  --dourado: #c9a24b;
+  --dourado-claro: #e4c877;
+  --creme: #f3ecdb;
+
+  --texto-principal: #f3ecdb;
+  --texto-secundario: #c7c2af;
+
+  --fundo: #0b1610;
+  --fundo-elevado: #122019;
+  --fundo-cartao: #16261d;
+  --borda: rgba(201, 162, 75, 0.18);
+
+  --raio: 14px;
+  --sombra: 0 12px 28px rgba(0, 0, 0, 0.35);
+
+  --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fonte-corpo: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, var(--verde-900) 0%, var(--fundo) 55%);
+  color: var(--texto-principal);
+  font-family: var(--fonte-corpo);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  color: var(--creme);
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--texto-secundario);
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------------------------------------------------------------------
+   CABEÇALHO
+   --------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 22, 16, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 16px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marca .folha {
+  font-size: 1.4rem;
+  filter: drop-shadow(0 0 6px rgba(201, 162, 75, 0.35));
+}
+
+.marca-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dourado-claro);
+  letter-spacing: 0.02em;
+}
+
+.site-nav a {
+  color: var(--texto-secundario);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--dourado-claro);
+  border-color: var(--borda);
+  background: rgba(201, 162, 75, 0.08);
+}
+
+/* ---------------------------------------------------------------------
+   HERO / SAUDAÇÃO
+   --------------------------------------------------------------------- */
+
+.hero {
+  padding: 48px 0 28px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.hero .eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verde-400);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  max-width: 720px;
+}
+
+.hero h1 span {
+  color: var(--dourado-claro);
+}
+
+.hero p {
+  max-width: 560px;
+  font-size: 1.02rem;
+}
+
+/* ---------------------------------------------------------------------
+   SECÇÕES DE MÓDULOS
+   --------------------------------------------------------------------- */
+
+.modules-section {
+  padding: 40px 0 8px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  font-size: 1.6rem;
+}
+
+.section-heading .linha {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--borda), transparent);
+}
+
+.grid-modulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* ---------------------------------------------------------------------
+   CARD DE MÓDULO
+   --------------------------------------------------------------------- */
+
+.card-modulo {
+  background: var(--fundo-cartao);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.card-modulo:hover,
+.card-modulo:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+  border-color: rgba(201, 162, 75, 0.45);
+}
+
+.card-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--verde-700), var(--verde-900));
+}
+
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-modulo:hover .card-cover img {
+  transform: scale(1.06);
+}
+
+.card-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 22, 16, 0) 45%, rgba(11, 22, 16, 0.75) 100%);
+}
+
+.card-corpo {
+  padding: 14px 16px 18px;
+}
+
+.card-corpo h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.card-corpo .card-desc {
+  font-size: 0.86rem;
+  margin: 0;
+  color: var(--texto-secundario);
+}
+
+/* ---------------------------------------------------------------------
+   RODAPÉ
+   --------------------------------------------------------------------- */
+
+.site-footer {
+  margin-top: 60px;
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--borda);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.82rem;
+  color: var(--texto-secundario);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------
+   BOTÕES
+   --------------------------------------------------------------------- */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.botao-dourado {
+  background: linear-gradient(135deg, var(--dourado-claro), var(--dourado));
+  color: var(--verde-900);
+}
+
+.botao-dourado:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(201, 162, 75, 0.3);
+}
+
+.botao-contorno {
+  background: transparent;
+  border-color: var(--borda);
+  color: var(--texto-secundario);
+}
+
+.botao-contorno:hover {
+  border-color: var(--dourado);
+  color: var(--dourado-claro);
+}
+
+.botao-desativado {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--texto-secundario);
+  border-color: var(--borda);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.botao-voltar {
+  margin: 22px 0;
+}
+
+.module-content {
+  padding-bottom: 40px;
+}
+
+/* ---------------------------------------------------------------------
+   CARTÃO DE MATERIAL (PDF DO MÓDULO)
+   --------------------------------------------------------------------- */
+
+.material-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--fundo-elevado);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 18px 20px;
+  margin-bottom: 26px;
+}
+
+.material-icone {
+  font-size: 2.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.material-info {
+  flex: 1 1 200px;
+}
+
+.material-info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.material-info p {
+  font-size: 0.85rem;
+  margin: 0;
+  color: var(--texto-secundario);
+}
+
+.material-acoes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------------------
+   PÁGINA DE MÓDULO — BANNER
+   --------------------------------------------------------------------- */
+
+.module-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 7;
+  min-height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--verde-700), var(--verde-900));
+}
+
+.module-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.module-banner-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(180deg, rgba(11, 22, 16, 0.15) 0%, rgba(11, 22, 16, 0.92) 100%);
+}
+
+.module-banner-overlay .container {
+  padding-bottom: 26px;
+}
+
+.module-banner-overlay .eyebrow {
+  color: var(--dourado-claro);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.module-banner-overlay h1 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  margin-bottom: 6px;
+}
+
+.module-banner-overlay p {
+  max-width: 640px;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------
+   ESTADOS VAZIOS / AVISOS
+   --------------------------------------------------------------------- */
+
+.aviso-modulo-inexistente {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.aviso-modulo-inexistente h1 {
+  color: var(--dourado-claro);
+}
+
+/* ---------------------------------------------------------------------
+   UTILITÁRIOS
+   --------------------------------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
