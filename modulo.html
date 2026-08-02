@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Módulo — Recanto dos Sonhos</title>
+<meta name="description" content="Página de módulo da área de membros Recanto dos Sonhos." />
+
+<!--
+  Página-modelo reutilizável para todos os módulos.
+  O módulo a apresentar é escolhido pelo parâmetro "id" no URL, por exemplo:
+  modulo.html?id=quintais-pequenos
+  Todo o conteúdo (título, capa, e-book em PDF) vem de
+  js/modules-data.js — não é preciso criar uma página HTML por módulo.
+
+  AVISO: o PDF de cada módulo (Google Drive) só fica protegido se a
+  partilha estiver definida como "Qualquer pessoa com o link".
+-->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="marca">
+      <span class="folha" aria-hidden="true">🌿</span>
+      <span class="marca-nome">Recanto dos Sonhos</span>
+    </div>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+    </nav>
+  </div>
+</header>
+
+<div id="modulo-raiz">
+  <!-- Conteúdo gerado automaticamente por js/modulo.js -->
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="ano-atual"></span> Recanto dos Sonhos. Acesso reservado a quem detém este link.</p>
+  </div>
+</footer>
+
+<script src="js/modules-data.js"></script>
+<script src="js/modulo.js"></script>
+</body>
+</html>
